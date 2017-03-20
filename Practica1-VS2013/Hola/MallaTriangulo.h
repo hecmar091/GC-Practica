@@ -17,6 +17,5 @@ public:
 protected:
 	void activar();
 	void desactivar();
-
 };
 
