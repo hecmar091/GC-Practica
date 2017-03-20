@@ -1,3 +1,5 @@
+#include <cmath>
+
 #include "MallaTriangulo.h"
 
 MallaTriangulo::MallaTriangulo()
@@ -11,6 +13,14 @@ MallaTriangulo::MallaTriangulo(int radio)
 	numDat = 3;
 	vertices = new PVec3[numDat];
 	normales = new PVec3[numDat];
+
+	vertices[0] = PVec3(0.0, radio, 0.0);
+	vertices[1] = PVec3(radio, 0.0, 0.0);
+	vertices[2] = PVec3(radio, radio, 0.0);
+
+	normales[0] = vertices[0].cross(vertices[1]);
+	normales[1] = vertices[1].cross(vertices[2]);
+	normales[2] = vertices[2].cross(vertices[0]);
 }
 
 

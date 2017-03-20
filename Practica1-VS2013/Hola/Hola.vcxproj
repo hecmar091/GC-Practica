@@ -130,16 +130,6 @@
     <ClInclude Include="tipos.h" />
     <ClInclude Include="MallaTriangulo.h" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\..\Documentación\01 Mallas.pdf" />
-    <None Include="..\..\..\..\Documentación\02 Texturas.pdf" />
-    <None Include="..\..\..\..\Documentación\03 Selección.pdf" />
-    <None Include="..\..\..\..\Documentación\04 Blending.pdf" />
-    <None Include="..\..\..\..\Documentación\Practica 1.1.pdf" />
-    <None Include="..\..\..\..\Documentación\Practica 1.2.pdf" />
-    <None Include="..\..\..\..\Documentación\Practica 1.3.pdf" />
-    <None Include="..\..\..\..\Documentación\Practica 1.4.pdf" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
