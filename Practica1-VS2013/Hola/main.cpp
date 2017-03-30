@@ -52,7 +52,8 @@ void intitGL(){ //OpenGL basic setting
   viewPort.set(viewPort.x, viewPort.y, winWidth, winHeight);  // glViewport(0, 0, WIDTH, HEIGHT);
 
   // Camera position and orentation
-  camera.setEZ(); 
+  //camera.setEZ(); 
+  camera.set3D();
   // Scene visible area and projection  
   camera.setVV();
 

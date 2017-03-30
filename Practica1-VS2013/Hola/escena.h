@@ -4,6 +4,7 @@
 
 #include "tipos.h"
 #include "MallaTriangulo.h"
+#include "PiramideTri.h"
 
 //-------------------------------------------------------------------------
 class Ejes {
@@ -20,13 +21,14 @@ public:
 
 class Escena {
 public:
-  Escena(): ejes(200), triangulo(50) {};
+  Escena(): ejes(200), triangulo(50), piramide(50,100) {};
   ~Escena();
   void init();
   void draw();
 public:
   Ejes ejes;
   MallaTriangulo triangulo;
+  PiramideTri piramide;
 };
 
 //-------------------------------------------------------------------------

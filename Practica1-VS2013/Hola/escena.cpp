@@ -18,7 +18,8 @@ Escena::~Escena(){
 
 void Escena::draw(){
   ejes.draw();
-  triangulo.draw();
+  //triangulo.draw();
+  piramide.draw();
 }
 
 //-------------------------------------------------------------------------
