@@ -58,6 +58,22 @@ public:
   GLsizei w, h;
 };
 
+class CTex2 {
+public:
+	CTex2(){};
+	CTex2(GLdouble _s, GLdouble _t) : s(_s), t(_t){};
+public:
+	GLdouble s, t;
+};
+
+class Color4 {
+public:
+	Color4(){};
+	Color4(GLdouble _r, GLdouble _g, GLdouble _b, GLdouble _a) : r(_r), g(_g), b(_b), a(_a) {};
+public:
+	GLdouble r, g, b, a;
+};
+
 //-------------------------------------------------------------------------
 
 #endif //_H_tipos_H_
