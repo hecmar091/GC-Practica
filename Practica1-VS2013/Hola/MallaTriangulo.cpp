@@ -6,10 +6,12 @@ MallaTriangulo::MallaTriangulo()
 {
 }
 
-MallaTriangulo::MallaTriangulo(int radio)
+MallaTriangulo::MallaTriangulo(int _radio)
 {
 	//X =R cos(ang)   tenemos que aumentar 2*pi/3 para cada vertice
 	//Y =R sin(ang)
+	radio = _radio;
+	centro = PVec3(0.0, 0.0, 0.0);
 
 	vertices[0] = PVec3(radio*cos(0), radio*sin(0), 0.0);
 	vertices[1] = PVec3(radio*cos(2*PI/3), radio*sin(2*PI/3), 0.0);

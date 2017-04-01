@@ -125,12 +125,14 @@
     <ClCompile Include="PiramideTri.cpp" />
     <ClCompile Include="tipos.cpp" />
     <ClCompile Include="MallaTriangulo.cpp" />
+    <ClCompile Include="TriAnimado.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="escena.h" />
     <ClInclude Include="PiramideTri.h" />
     <ClInclude Include="tipos.h" />
     <ClInclude Include="MallaTriangulo.h" />
+    <ClInclude Include="TriAnimado.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
