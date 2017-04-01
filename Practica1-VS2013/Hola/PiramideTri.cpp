@@ -11,18 +11,13 @@ PiramideTri::PiramideTri(int _radio, int _altura)
 	radio = _radio;
 	altura = _altura;
 	
-	MallaTriangulo tr1 = MallaTriangulo(radio);
-	MallaTriangulo tr2 = MallaTriangulo(radio);
-	MallaTriangulo tr3 = MallaTriangulo(radio);
-
-	triangulos[0] = tr1;
-	triangulos[1] = tr2;
-	triangulos[2] = tr3;	
+	triangulos[0] = MallaTriangulo(radio);
+	triangulos[1] = MallaTriangulo(radio);
+	triangulos[2] = MallaTriangulo(radio);
 }
 
 PiramideTri::~PiramideTri()
 {
-	delete[] triangulos;
 }
 
 void PiramideTri::draw()

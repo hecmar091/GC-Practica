@@ -11,9 +11,9 @@ public:
 
 	int radio;
 	int altura;
+
 	MallaTriangulo triangulos[3];
 
 	void draw();
-
 };
 

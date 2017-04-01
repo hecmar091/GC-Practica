@@ -122,11 +122,13 @@
   <ItemGroup>
     <ClCompile Include="escena.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PiramideTri.cpp" />
     <ClCompile Include="tipos.cpp" />
     <ClCompile Include="MallaTriangulo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="escena.h" />
+    <ClInclude Include="PiramideTri.h" />
     <ClInclude Include="tipos.h" />
     <ClInclude Include="MallaTriangulo.h" />
   </ItemGroup>
