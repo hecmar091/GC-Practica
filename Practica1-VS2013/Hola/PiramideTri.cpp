@@ -29,6 +29,7 @@ PiramideTri::PiramideTri(int _radio, int _altura)
 	triangulos[2].modificarVertice(verticeDosModif, 2);
 }
 
+
 PiramideTri::~PiramideTri()
 {
 }
@@ -38,4 +39,26 @@ void PiramideTri::draw()
 	triangulos[0].draw();
 	triangulos[1].draw();
 	triangulos[2].draw();
+}
+
+void transformarParteSuperior(){
+
+}
+
+void transformarParteInferior(){
+
+}
+
+void PiramideTri::drawDiabolo(){
+	glRotatef(-60.0f, 0.0f, 0.0f, 1.0f);
+	glTranslated(0.0f, 0.0f, -180.0f);
+	draw();
+	glRotatef(180.0f, 0.0f, 0.0f, 1.0f);
+	draw();
+
+	glRotatef(180.0f, 1.0f, 0.0f, 0.0f);
+	glTranslated(0.0f, 0.0f, -360.0f);
+	draw();
+	glRotatef(180.0f, 0.0f, 0.0f, 30.0f);
+	draw();
 }

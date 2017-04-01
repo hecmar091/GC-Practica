@@ -18,10 +18,10 @@ Escena::~Escena(){
 
 void Escena::draw(){
   ejes.draw();
-  trianguloAnimado.draw();
+  //trianguloAnimado.draw();
   //piramide.draw();
   //glRotatef(180.0f, 0.0f, 0.0f, 30.0f);
-  //piramide.draw();
+  piramide.drawDiabolo();
   //glTranslatef(0, 0, 20);
 }
 

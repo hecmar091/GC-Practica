@@ -15,5 +15,6 @@ public:
 	MallaTriangulo triangulos[3];
 
 	void draw();
+	void drawDiabolo();
 };
 

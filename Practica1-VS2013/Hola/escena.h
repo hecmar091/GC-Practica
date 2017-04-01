@@ -22,7 +22,7 @@ public:
 
 class Escena {
 public:
-	Escena() : ejes(200), triangulo(50), trianguloAnimado(50, 0, 0, 100.0), piramide(50, 100) {};
+	Escena() : ejes(200), triangulo(50), trianguloAnimado(50, 0, 0, 100.0), piramide(50, 90) {};
   ~Escena();
   void init();
   void draw();
