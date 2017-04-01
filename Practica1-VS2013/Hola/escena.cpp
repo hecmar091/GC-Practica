@@ -20,6 +20,9 @@ void Escena::draw(){
   ejes.draw();
   //triangulo.draw();
   piramide.draw();
+  glRotatef(180.0f, 0.0f, 0.0f, 30.0f);
+  piramide.draw();
+  //glTranslatef(0, 0, 20);
 }
 
 //-------------------------------------------------------------------------

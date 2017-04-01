@@ -39,6 +39,19 @@ void MallaTriangulo::desactivar(){
 void MallaTriangulo::draw(){
 	activar(); 
 	glColor4d(1.0, 0.0, 0.0, 0.0); // color red
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	glDrawArrays(GL_TRIANGLES, 0, 3); 
 	desactivar();
+}
+
+void MallaTriangulo::modificarVertice(PVec3 cero, int index){
+	vertices[index] = cero;
+	//Recalcular normales, porque se ha modificado..
+	normales[0] = vertices[0].cross(vertices[1]);
+	normales[1] = vertices[1].cross(vertices[2]);
+	normales[2] = vertices[2].cross(vertices[0]);
+}
+
+PVec3 MallaTriangulo::obtenerVertice(int index){
+	return vertices[index];
 }
