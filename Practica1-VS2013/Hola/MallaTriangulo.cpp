@@ -11,8 +11,7 @@ MallaTriangulo::MallaTriangulo(int _radio)
 	//X =R cos(ang)   tenemos que aumentar 2*pi/3 para cada vertice
 	//Y =R sin(ang)
 	radio = _radio;
-	centro = PVec3(0.0, 0.0, 0.0);
-
+	
 	vertices[0] = PVec3(radio*cos(0), radio*sin(0), 0.0);
 	vertices[1] = PVec3(radio*cos(2*PI/3), radio*sin(2*PI/3), 0.0);
 	vertices[2] = PVec3(radio*cos(4*PI/3), radio*sin(4*PI/3), 0.0);
@@ -20,6 +19,8 @@ MallaTriangulo::MallaTriangulo(int _radio)
 	normales[0] = vertices[0].cross(vertices[1]);
 	normales[1] = vertices[1].cross(vertices[2]);
 	normales[2] = vertices[2].cross(vertices[0]);
+
+	centro = PVec3((vertices[0].x + vertices[1].x + vertices[2].x) / 3, (vertices[0].y + vertices[1].y + vertices[2].y) / 3, 0.0);
 }
 
 MallaTriangulo::~MallaTriangulo()
