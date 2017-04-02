@@ -12,16 +12,22 @@ Rectangulo::Rectangulo(int _ancho, int _alto)
 	vertices[0] = PVec3(-ancho / 2, -alto / 2, 0.0);
 	vertices[1] = PVec3(-ancho / 2, alto / 2, 0.0);
 	vertices[2] = PVec3(ancho / 2, alto / 2, 0.0);
-	vertices[3] = PVec3(ancho / 2, -alto / 2, 0.0);
+
+	vertices[3] = PVec3(-ancho / 2, -alto / 2, 0.0);
+	vertices[4] = PVec3(ancho / 2, alto / 2, 0.0);
+	vertices[5] = PVec3(ancho / 2, -alto / 2, 0.0);
 
 	coordenadasTextura[0] = CTex2(0, 0);
 	coordenadasTextura[1] = CTex2(0, 1);
 	coordenadasTextura[2] = CTex2(1, 1);
-	coordenadasTextura[3] = CTex2(1, 0);
+
+	coordenadasTextura[3] = CTex2(0, 0);
+	coordenadasTextura[4] = CTex2(1, 1);
+	coordenadasTextura[5] = CTex2(1, 0);
 
 	color = Color4(1, 1, 1, 1);
 
-	normal = vertices[0].cross(vertices[3]);
+	normal = vertices[0].cross(vertices[5]);
 }
 
 Rectangulo::~Rectangulo()
@@ -33,12 +39,15 @@ void Rectangulo::set(int _ancho, int _alto)
 	ancho = _ancho;
 	alto = _alto;
 
-	vertices[0].set(-ancho / 2, -alto / 2, 0.0);
-	vertices[1].set(-ancho / 2, alto / 2, 0.0);
-	vertices[2].set(ancho / 2, alto / 2, 0.0);
-	vertices[3].set(ancho / 2, -alto / 2, 0.0);
+	vertices[0] = PVec3(-ancho / 2, -alto / 2, 0.0);
+	vertices[1] = PVec3(-ancho / 2, alto / 2, 0.0);
+	vertices[2] = PVec3(ancho / 2, alto / 2, 0.0);
 
-	normal = vertices[0].cross(vertices[3]);
+	vertices[3] = PVec3(-ancho / 2, -alto / 2, 0.0);
+	vertices[4] = PVec3(ancho / 2, alto / 2, 0.0);
+	vertices[5] = PVec3(ancho / 2, -alto / 2, 0.0);
+
+	normal = vertices[0].cross(vertices[5]);
 }
 
 void Rectangulo::draw()

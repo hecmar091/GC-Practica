@@ -52,8 +52,7 @@ void intitGL(){ //OpenGL basic setting
   viewPort.set(viewPort.x, viewPort.y, winWidth, winHeight);  // glViewport(0, 0, WIDTH, HEIGHT);
 
   // Camera position and orentation
-  //camera.setEZ(); 
-  camera.set3D();
+  camera.setEZ();
   // Scene visible area and projection  
   camera.setVV();
 
@@ -139,6 +138,9 @@ void resize(int newWidth, int newHeight){
 
   // Resize Scene Visible Area 
   camera.setVV(winWidth, winHeight);
+
+  // Resize escena => resizee rectángulo
+  escena.resize(winWidth, winHeight);
 }
 
 //-------------------------------------------------------------------------

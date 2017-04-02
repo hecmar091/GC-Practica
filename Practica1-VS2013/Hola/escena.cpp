@@ -4,8 +4,11 @@
 //-------------------------------------------------------------------------
 
 void Escena::init(){
-  // texturas
-  // luces
+	// texturas
+	glEnable(GL_TEXTURE_2D);
+	textura.init();
+	textura.load("../bmps/Zelda.bmp");
+	// luces
 }
 
 //-------------------------------------------------------------------------
@@ -17,12 +20,18 @@ Escena::~Escena(){
 //-------------------------------------------------------------------------
 
 void Escena::draw(){
-  ejes.draw();
-  //trianguloAnimado.draw();
-  //piramide.draw();
-  //glRotatef(180.0f, 0.0f, 0.0f, 30.0f);
-  piramide.drawDiabolo();
-  //glTranslatef(0, 0, 20);
+	glDisable(GL_DEPTH_TEST);
+	textura.activar();
+	
+	//ejes.draw();
+	//trianguloAnimado.draw();
+	//piramide.draw();
+	//glRotatef(180.0f, 0.0f, 0.0f, 30.0f);
+	//piramide.drawDiabolo();
+	//glTranslatef(0, 0, 20);
+	rectangulo.draw();
+
+	textura.desactivar();
 }
 
 //-------------------------------------------------------------------------
@@ -75,6 +84,14 @@ void Ejes::draw(){
   glEnd();
   glLineWidth(1);
   */
+}
+
+void Escena::resize(int nuevoAncho, int nuevoAlto)
+{
+	ancho = nuevoAncho;
+	alto = nuevoAlto;
+
+	rectangulo.set(ancho, alto);
 }
 
 //-------------------------------------------------------------------------

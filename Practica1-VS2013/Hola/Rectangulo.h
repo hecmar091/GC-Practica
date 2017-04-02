@@ -15,9 +15,9 @@ public:
 protected:
 	int ancho;
 	int alto;
-	PVec3 vertices[4];
+	PVec3 vertices[6];
 	PVec3 normal;
 	Color4 color;
-	CTex2 coordenadasTextura[4];
+	CTex2 coordenadasTextura[6];
 };
 
