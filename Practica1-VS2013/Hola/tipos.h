@@ -8,6 +8,8 @@
 //-------------------------------------------------------------------------
 #define PI 3.141592
 
+enum EEstado { COLLAGE, RECORTAR, ANIMAR, DIABOLO };
+
 class PVec3 {
 public:
   PVec3(GLdouble ax = 0.0, GLdouble ay = 0.0, GLdouble az = 0.0) : x(ax), y(ay), z(az) {};

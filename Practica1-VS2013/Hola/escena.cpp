@@ -3,35 +3,60 @@
 
 //-------------------------------------------------------------------------
 
-void Escena::init(){
+void Escena::init()
+{
 	// texturas
 	glEnable(GL_TEXTURE_2D);
 	textura.init();
-	textura.load("../bmps/Zelda.bmp");
+	textura.load("../bmps/ray.bmp");
 	// luces
 }
 
 //-------------------------------------------------------------------------
 
-Escena::~Escena(){
+Escena::~Escena()
+{
    // liberar memoria y recursos
 }
 
 //-------------------------------------------------------------------------
 
-void Escena::draw(){
-	glDisable(GL_DEPTH_TEST);
-	textura.activar();
-	
-	//ejes.draw();
-	//trianguloAnimado.draw();
-	//piramide.draw();
-	//glRotatef(180.0f, 0.0f, 0.0f, 30.0f);
-	//piramide.drawDiabolo();
-	//glTranslatef(0, 0, 20);
-	rectangulo.draw();
+void Escena::draw()
+{
+	switch (estado)
+	{
+	case COLLAGE:
+		break;
+	case RECORTAR:
+		glDisable(GL_DEPTH_TEST);
+		textura.activar();
+		rectangulo.draw();
+		textura.desactivar();
+		triangulo.draw();
+		break;
+	case ANIMAR:
+		textura.activar();
+		trianguloAnimado.drawTex();
+		textura.desactivar();
+		break;
+	case DIABOLO:
+		break;
+	default:
+		break;
+	}
+}
 
-	textura.desactivar();
+void Escena::resize(int nuevoAncho, int nuevoAlto)
+{
+	ancho = nuevoAncho;
+	alto = nuevoAlto;
+
+	rectangulo.set(ancho, alto);
+}
+
+void Escena::update(double angulo)
+{
+	if (estado == ANIMAR) trianguloAnimado.update(angulo);
 }
 
 //-------------------------------------------------------------------------
@@ -66,32 +91,6 @@ void Ejes::draw(){
 
   glDisableClientState(GL_COLOR_ARRAY);
   glDisableClientState(GL_VERTEX_ARRAY);
-
- /* 
-  glLineWidth(2);
-  glBegin(GL_LINES);
-     glColor3d(1.0, 0.0, 0.0); // red
-     glVertex3d(vertices[0].x, vertices[0].y, vertices[0].z);   // origin
-     glVertex3d(vertices[1].x, vertices[1].y, vertices[1].z);   // x   
-
-     glColor3d(0.0, 1.0, 0.0); // green
-     glVertex3d(vertices[2].x, vertices[2].y, vertices[2].z);   // origin
-     glVertex3d(vertices[3].x, vertices[3].y, vertices[3].z);	  // y
-
-     glColor3d(0.0, 0.0, 1.0); // blue
-     glVertex3d(vertices[4].x, vertices[4].y, vertices[4].z);   // origin
-     glVertex3d(vertices[5].x, vertices[5].y, vertices[5].z);	  // z   
-  glEnd();
-  glLineWidth(1);
-  */
-}
-
-void Escena::resize(int nuevoAncho, int nuevoAlto)
-{
-	ancho = nuevoAncho;
-	alto = nuevoAlto;
-
-	rectangulo.set(ancho, alto);
 }
 
 //-------------------------------------------------------------------------

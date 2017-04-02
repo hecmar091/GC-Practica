@@ -21,6 +21,12 @@ MallaTriangulo::MallaTriangulo(int _radio)
 	normales[2] = vertices[2].cross(vertices[0]);
 
 	centro = PVec3((vertices[0].x + vertices[1].x + vertices[2].x) / 3, (vertices[0].y + vertices[1].y + vertices[2].y) / 3, 0.0);
+
+	color = Color4(1, 1, 1, 1);
+
+	coordenadasTextura[0] = CTex2(0, 0);
+	coordenadasTextura[1] = CTex2(1, 0);
+	coordenadasTextura[2] = CTex2(1, 1);
 }
 
 MallaTriangulo::~MallaTriangulo()
@@ -41,9 +47,28 @@ void MallaTriangulo::desactivar(){
 
 void MallaTriangulo::draw(){
 	activar(); 
+
 	glColor4d(1.0, 0.0, 0.0, 0.0); // color red
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	glDrawArrays(GL_TRIANGLES, 0, 3); 
+
+	desactivar();
+}
+
+void MallaTriangulo::drawTex(){
+	activar();
+
+	// activar texturas
+	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+	glTexCoordPointer(2, GL_DOUBLE, 0, coordenadasTextura);
+
+	glColor4d(1.0, 0.0, 0.0, 0.0); // color red
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	glDrawArrays(GL_TRIANGLES, 0, 3);
+
+	// desactivar texturas
+	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+
 	desactivar();
 }
 

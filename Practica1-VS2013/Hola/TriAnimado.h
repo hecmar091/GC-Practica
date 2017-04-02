@@ -7,17 +7,20 @@ class TriAnimado
 public:
 	TriAnimado();
 	TriAnimado(int _radio);
-	TriAnimado(int _radio, float _anguloR, float _anguloRZ, float _radioR);
+	TriAnimado(int _radio, double _anguloR, double _anguloRZ, double _radioR);
 	~TriAnimado();
 
-	void update(float _angulo);
+	void update(double _angulo);
 	void draw();
+	void drawTex();
+	void set(MallaTriangulo t) { Triangulo = t; };
+	void set(double _anguloR, double _anguloRZ, double _radioR) { anguloR = _anguloR; anguloRZ = _anguloRZ; radioR = _radioR; };
 
 protected:
 	MallaTriangulo Triangulo;
 
-	float anguloR;
-	float anguloRZ;
-	float radioR;
+	double anguloR;
+	double anguloRZ;
+	double radioR;
 };
 

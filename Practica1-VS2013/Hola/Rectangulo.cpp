@@ -60,9 +60,9 @@ void Rectangulo::draw()
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 	glTexCoordPointer(2, GL_DOUBLE, 0, coordenadasTextura);
 
-	glNormal3f(normal.x, normal.y, normal.z);
+	glNormal3d(normal.x, normal.y, normal.z);
 
-	glColor4f(color.r, color.g, color.b, color.a);
+	glColor4d(color.r, color.g, color.b, color.a);
 
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 6);
 

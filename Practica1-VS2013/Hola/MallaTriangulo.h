@@ -14,12 +14,15 @@ public:
 	PVec3 obtenerVertice(int index);
 	
 	void draw();
+	void drawTex();
 
 protected:
 	int radio;
 	int angulo;
 	PVec3 vertices[3], normales[3];
 	PVec3 centro;
+	CTex2 coordenadasTextura[3];
+	Color4 color;
 
 	void activar();
 	void desactivar();

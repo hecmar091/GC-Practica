@@ -24,21 +24,25 @@ public:
 
 class Escena {
 public:
-	Escena() : ejes(200), triangulo(50), trianguloAnimado(50, 0, 0, 100.0), piramide(50, 90), rectangulo(100, 50) {};
+	Escena() : ejes(200), triangulo(50), trianguloAnimado(), piramide(50, 90), rectangulo(100, 50), estado(RECORTAR) {};
 	~Escena();
 	void init();
 	void draw();
 	void resize(int nuevoAncho, int nuevoAlto);
-public:
+	void update(double angulo);
+	void setEstado(EEstado nuevoEstado) { estado = nuevoEstado; };
+	void initTriAnimado(){ trianguloAnimado.set(triangulo); trianguloAnimado.set(0, 0, 100); };
+protected:
 	Ejes ejes;
 	MallaTriangulo triangulo;
 	TriAnimado trianguloAnimado;
 	PiramideTri piramide;
 	Textura textura;
 	Rectangulo rectangulo;
-protected:
+
 	int ancho;
 	int alto;
+	EEstado estado;
 };
 
 //-------------------------------------------------------------------------

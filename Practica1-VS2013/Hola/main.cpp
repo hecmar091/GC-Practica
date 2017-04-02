@@ -166,7 +166,11 @@ void key(unsigned char key, int x, int y){
 	  camera.setEZ();
 	  break;
   case 't':
-	  escena.trianguloAnimado.update(30);
+	  escena.update(30);
+	  break;
+  case '3':
+	  escena.setEstado(ANIMAR);
+	  escena.initTriAnimado();
 	  break;
   default:
     need_redisplay = false;
