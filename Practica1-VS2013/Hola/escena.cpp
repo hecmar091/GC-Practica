@@ -43,6 +43,7 @@ void Escena::draw()
 		glDisable(GL_DEPTH_TEST);
 		textura.activar();
 		piramide.drawDiaboloTex();
+		//Falta añadir las texturas.
 		textura.desactivar();
 		break;
 	default:
