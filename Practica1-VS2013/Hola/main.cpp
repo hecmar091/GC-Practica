@@ -32,8 +32,25 @@ void resize(int newWidth, int newHeight);
 void key(unsigned char key, int x, int y);
 void specialKey(int key, int x, int y);
 void mouse(int button, int state, int x, int y);
+void motion(int px, int py);
 
 //-------------------------------------------------------------------------
+
+GLdouble xWin2VV(int mx) {
+	return mx - winWidth / 2.0;
+}
+GLdouble yWin2VV(int my) {
+	return  (winHeight - my) - winHeight / 2.0;
+}
+
+void motion(int px, int py){
+	GLdouble x = xWin2VV(px);
+	GLdouble y = yWin2VV(py);
+
+	escena.motion(x, y);
+
+	glutPostRedisplay();
+}
 
 void intitGL(){ //OpenGL basic setting
 
@@ -95,6 +112,7 @@ int main(int argc, char *argv[]){
   glutSpecialFunc(specialKey);
   glutDisplayFunc(display);
   glutMouseFunc(mouse);
+  glutMotionFunc(motion);
 
   // OpenGL basic setting
   intitGL();
@@ -167,6 +185,9 @@ void key(unsigned char key, int x, int y){
 	  break;
   case 't':
 	  escena.update(30);
+	  break;
+  case 'r':
+	  escena.rotarTriangulo();
 	  break;
   case '3':
 	  escena.setEstado(ANIMAR);

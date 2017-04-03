@@ -31,7 +31,9 @@ public:
 	void resize(int nuevoAncho, int nuevoAlto);
 	void update(double angulo);
 	void setEstado(EEstado nuevoEstado) { estado = nuevoEstado; };
-	void initTriAnimado(){ trianguloAnimado.set(triangulo); trianguloAnimado.set(0, 0, 100); };
+	void initTriAnimado(){ trianguloAnimado.set(triangulo); trianguloAnimado.set(0, 0, 100); trianguloAnimado.set(ancho, alto); };
+	void rotarTriangulo(){ if (estado == RECORTAR) triangulo.rotar(); };
+	void motion(double x, double y);
 protected:
 	Ejes ejes;
 	MallaTriangulo triangulo;

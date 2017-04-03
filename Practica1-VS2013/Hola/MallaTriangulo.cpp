@@ -48,9 +48,11 @@ void MallaTriangulo::desactivar(){
 void MallaTriangulo::draw(){
 	activar(); 
 
-	glColor4d(1.0, 0.0, 0.0, 0.0); // color red
+	glColor4d(color.r, color.g, color.b, color.a);
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	glDrawArrays(GL_TRIANGLES, 0, 3); 
+
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 	desactivar();
 }
@@ -62,8 +64,8 @@ void MallaTriangulo::drawTex(){
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 	glTexCoordPointer(2, GL_DOUBLE, 0, coordenadasTextura);
 
-	glColor4d(1.0, 0.0, 0.0, 0.0); // color red
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	glColor4d(color.r, color.g, color.b, color.a);
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 
 	// desactivar texturas
@@ -82,4 +84,52 @@ void MallaTriangulo::modificarVertice(PVec3 cero, int index){
 
 PVec3 MallaTriangulo::obtenerVertice(int index){
 	return vertices[index];
+}
+
+void MallaTriangulo::setCoordenadasTextura(int ancho, int alto)
+{
+	GLdouble s;
+	GLdouble t;
+
+	for (int i = 0; i < 3; i++){
+		s = (vertices[i].x + (ancho / 2)) / ancho;
+		t = (alto - vertices[i].y - (alto / 2)) / alto;
+
+		coordenadasTextura[i].s = s;
+		coordenadasTextura[i].t = t;
+	}
+}
+
+bool MallaTriangulo::dentro(double x, double y)
+{
+	if (((vertices[0].x - x)*(vertices[1].y - y) - (vertices[0].y - y)*(vertices[1].x - x)) < 0) return false;
+
+	if (((vertices[1].x - x)*(vertices[2].y - y) - (vertices[1].y - y)*(vertices[2].x - x)) < 0) return false;
+
+	if (((vertices[2].x - x)*(vertices[0].y - y) - (vertices[2].y - y)*(vertices[0].x - x)) < 0) return false;
+
+	return true;
+}
+
+void MallaTriangulo::posicionar(double x, double y)
+{
+	double dx = x - centro.x;
+	double dy = y - centro.y;
+
+	centro.set(x, y, 0.0);
+
+	vertices[0].set(vertices[0].x + dx, vertices[0].y + dy, 0);
+	vertices[1].set(vertices[1].x + dx, vertices[1].y + dy, 0);
+	vertices[2].set(vertices[2].x + dx, vertices[2].y + dy, 0);
+}
+
+void MallaTriangulo::rotar()
+{
+	angulo = (angulo + 30) % 360;
+	double ang = angulo * PI / 180;
+
+	for (int i = 0; i < 3; i++){
+		vertices[i].set(centro.x + radio*cos(ang), centro.y + radio*sin(ang), 0.0);
+		ang += 2 * PI / 3;
+	}
 }

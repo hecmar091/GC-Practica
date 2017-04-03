@@ -59,6 +59,13 @@ void Escena::update(double angulo)
 	if (estado == ANIMAR) trianguloAnimado.update(angulo);
 }
 
+void Escena::motion(double x, double y)
+{
+	if (triangulo.dentro(x, y))
+	{
+		triangulo.posicionar(x, y);
+	}
+}
 //-------------------------------------------------------------------------
 
 Ejes::Ejes(GLdouble l) {
@@ -92,7 +99,6 @@ void Ejes::draw(){
   glDisableClientState(GL_COLOR_ARRAY);
   glDisableClientState(GL_VERTEX_ARRAY);
 }
-
 //-------------------------------------------------------------------------
 
 

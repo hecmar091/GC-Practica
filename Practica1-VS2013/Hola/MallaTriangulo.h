@@ -13,6 +13,10 @@ public:
 	
 	PVec3 obtenerVertice(int index);
 	
+	void setCoordenadasTextura(int ancho, int alto);
+	bool dentro(double x, double y);
+	void posicionar(double x, double y);
+	void rotar();
 	void draw();
 	void drawTex();
 
