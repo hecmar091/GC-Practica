@@ -94,15 +94,12 @@ void PiramideTri::drawDiabolo(){
 }
 
 void PiramideTri::drawDiaboloTex(){
-	glRotatef(-60.0f, 0.0f, 0.0f, 1.0f);
-	glTranslated(0.0f, 0.0f, -180.0f);
 	drawTex();
-	glRotatef(180.0f, 0.0f, 0.0f, 1.0f);
+	glRotated(30, 0, 0, 1);
 	drawTex();
-
-	glRotatef(180.0f, 1.0f, 0.0f, 0.0f);
-	glTranslated(0.0f, 0.0f, -360.0f);
+	glTranslated(0.0f, 0.0f, 360.0f);
+	glRotated(180, 1, 0, 0);
 	drawTex();
-	glRotatef(180.0f, 0.0f, 0.0f, 30.0f);
+	glRotated(30, 0, 0, 1);
 	drawTex();
 }

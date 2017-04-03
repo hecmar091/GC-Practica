@@ -197,6 +197,15 @@ void key(unsigned char key, int x, int y){
 	  escena.setEstado(DIABOLO);
 	  escena.initDiabolo();
 	  break;
+  case 'x':
+	  glRotated(20, 1, 0, 0);
+	  break;
+  case 'y':
+	  glRotated(20, 0, 1, 0);
+	  break;
+  case 'z':
+	  glRotated(20, 0, 0, 1);
+	  break;
   default:
     need_redisplay = false;
     break;
