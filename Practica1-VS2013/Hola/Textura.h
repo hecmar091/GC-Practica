@@ -39,6 +39,9 @@ public:
 	};
 
 	bool load(const std::string & BMP_Name); // cargar y transferir a openGL
+	bool load(const std::string & BMP_Name, GLubyte alpha);
+	bool load(const std::string & BMP_Name, PixMap24RGB::rgb_color colorKey, GLubyte alpha);
+
 	void save(const std::string & BMP_Name); // obtener de openGL y guardar
 
 public:

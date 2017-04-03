@@ -31,13 +31,14 @@ void TriAnimado::update(double _angulo)
 void TriAnimado::draw()
 {
 	glPushMatrix();
-	glRotated(anguloRZ, 0.0f, 0.0f, 1.0f);//rota entorno al eje
+	glRotated(anguloRZ, 0.0, 0.0, 1.0);
 	glTranslated(radioR, 0, 0);
 	glPushMatrix();
-	glRotatef(anguloR, 0.0f, 0.0f, 1.0f);//rota entorno al eje del triangulo
+	glRotated(anguloR, 0.0, 0.0, 1.0);
 	
 	Triangulo.draw();
 
+	glPopMatrix();
 	glPopMatrix();
 }
 

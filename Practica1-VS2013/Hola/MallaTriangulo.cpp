@@ -93,7 +93,7 @@ void MallaTriangulo::setCoordenadasTextura(int ancho, int alto)
 
 	for (int i = 0; i < 3; i++){
 		s = (vertices[i].x + (ancho / 2)) / ancho;
-		t = (alto - vertices[i].y - (alto / 2)) / alto;
+		t = 1 - (alto - vertices[i].y - (alto / 2)) / alto;
 
 		coordenadasTextura[i].s = s;
 		coordenadasTextura[i].t = t;
