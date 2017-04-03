@@ -193,6 +193,10 @@ void key(unsigned char key, int x, int y){
 	  escena.setEstado(ANIMAR);
 	  escena.initTriAnimado();
 	  break;
+  case '4':
+	  escena.setEstado(DIABOLO);
+	  escena.initDiabolo();
+	  break;
   default:
     need_redisplay = false;
     break;

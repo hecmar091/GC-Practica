@@ -32,6 +32,7 @@ public:
 	void update(double angulo);
 	void setEstado(EEstado nuevoEstado) { estado = nuevoEstado; };
 	void initTriAnimado(){ trianguloAnimado.set(triangulo); trianguloAnimado.set(0, 0, 100); trianguloAnimado.set(ancho, alto); };
+	void initDiabolo(){ piramideAnimada = PiramideTri(trianguloAnimado, 92); };
 	void rotarTriangulo(){ if (estado == RECORTAR) triangulo.rotar(); };
 	void motion(double x, double y);
 protected:
@@ -39,6 +40,7 @@ protected:
 	MallaTriangulo triangulo;
 	TriAnimado trianguloAnimado;
 	PiramideTri piramide;
+	PiramideTri piramideAnimada;
 	Textura textura;
 	Rectangulo rectangulo;
 

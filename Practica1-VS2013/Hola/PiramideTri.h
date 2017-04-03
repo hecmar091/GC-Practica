@@ -1,12 +1,15 @@
 #pragma once
 
 #include "MallaTriangulo.h";
+#include "TriAnimado.h";
 
 class PiramideTri
 {
 public:
 	PiramideTri();
 	PiramideTri(int _radio, int _altura);
+	PiramideTri(TriAnimado tri, int _altura);
+
 	~PiramideTri();
 
 	int radio;
@@ -16,5 +19,7 @@ public:
 
 	void draw();
 	void drawDiabolo();
+	void drawDiaboloTex();
+	void drawTex();
 };
 

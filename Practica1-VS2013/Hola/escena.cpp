@@ -40,6 +40,12 @@ void Escena::draw()
 		textura.desactivar();
 		break;
 	case DIABOLO:
+		textura.activar();
+		//Giramos para que salga bien.
+		glRotated(90, 0, 1, 0);
+		glRotated(90, 1, 0, 0);
+		piramideAnimada.drawDiaboloTex();
+		textura.desactivar();
 		break;
 	default:
 		break;
