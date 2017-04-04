@@ -13,7 +13,10 @@ public:
 	
 	PVec3 obtenerVertice(int index);
 	
+	CTex2* getCoordenadasTextura(){ return coordenadasTextura; };
+
 	void setCoordenadasTextura(int ancho, int alto);
+	void setCoordenadasTextura(CTex2* coordendas);
 	bool dentro(double x, double y);
 	void posicionar(double x, double y);
 	void rotar();

@@ -33,23 +33,21 @@ void TriAnimado::draw()
 	glPushMatrix();
 	glRotated(anguloRZ, 0.0, 0.0, 1.0);
 	glTranslated(radioR, 0, 0);
-	glPushMatrix();
 	glRotated(anguloR, 0.0, 0.0, 1.0);
 	
 	Triangulo.draw();
 
-	glPopMatrix();
 	glPopMatrix();
 }
 
 void TriAnimado::drawTex()
 {
 	glPushMatrix();
-	glRotated(anguloRZ, 0.0f, 0.0f, 1.0f);//rota entorno al eje
+	
+	glRotated(anguloRZ, 0.0f, 0.0f, 1.0f);
 	glTranslated(radioR, 0, 0);
-	glPushMatrix();
-	glRotatef(anguloR, 0.0f, 0.0f, 1.0f);//rota entorno al eje del triangulo
-
+	glRotatef(anguloR, 0.0f, 0.0f, 1.0f);
+	
 	Triangulo.drawTex();
 
 	glPopMatrix();

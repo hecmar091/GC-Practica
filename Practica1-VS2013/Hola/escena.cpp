@@ -40,15 +40,18 @@ void Escena::draw()
 		textura.desactivar();
 		break;
 	case DIABOLO:
-		glDisable(GL_DEPTH_TEST);
 		textura.activar();
-		piramide.drawDiaboloTex();
-		//Falta añadir las texturas.
+		//Giramos para que salga bien.
+		/*glRotated(90, 0, 1, 0);
+		glRotated(90, 1, 0, 0);*/
+		piramideAnimada.drawDiaboloTex();
 		textura.desactivar();
 		break;
 	default:
 		break;
 	}
+
+	ejes.draw();
 }
 
 void Escena::resize(int nuevoAncho, int nuevoAlto)

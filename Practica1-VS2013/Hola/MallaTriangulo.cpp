@@ -100,6 +100,13 @@ void MallaTriangulo::setCoordenadasTextura(int ancho, int alto)
 	}
 }
 
+void MallaTriangulo::setCoordenadasTextura(CTex2* coordendas){
+	for (int i = 0; i < 3; i++){
+		coordenadasTextura[i].s = coordendas[i].s;
+		coordenadasTextura[i].t = coordendas[i].t;
+	}
+}
+
 bool MallaTriangulo::dentro(double x, double y)
 {
 	if (((vertices[0].x - x)*(vertices[1].y - y) - (vertices[0].y - y)*(vertices[1].x - x)) < 0) return false;

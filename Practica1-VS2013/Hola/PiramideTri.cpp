@@ -15,43 +15,15 @@ PiramideTri::PiramideTri(int _radio, int _altura)
 	triangulos[1] = MallaTriangulo(radio);
 	triangulos[2] = MallaTriangulo(radio);
 
-
-	PVec3 verticeCero = triangulos[0].obtenerVertice(0);
-	PVec3 verticeCeroModif = PVec3(0, 0, 2 * altura);
+	PVec3 verticeCeroModif = PVec3(0, 0, altura);
 	triangulos[0].modificarVertice(verticeCeroModif, 0);
 
-	PVec3 verticeUno = triangulos[1].obtenerVertice(1);
-	PVec3 verticeUnoModif = PVec3(0, 0, 2 * altura);
+	PVec3 verticeUnoModif = PVec3(0, 0, altura);
 	triangulos[1].modificarVertice(verticeUnoModif, 1);
 
-	PVec3 verticeDos = triangulos[2].obtenerVertice(2);
-	PVec3 verticeDosModif = PVec3(0, 0, 2 * altura);
+	PVec3 verticeDosModif = PVec3(0, 0, altura);
 	triangulos[2].modificarVertice(verticeDosModif, 2);
 }
-
-PiramideTri::PiramideTri(TriAnimado tri, int _altura)
-{
-	
-	altura = _altura;
-
-	triangulos[0] = tri.getTriangulo();
-	triangulos[1] = tri.getTriangulo();
-	triangulos[2] = tri.getTriangulo();
-
-
-	PVec3 verticeCero = triangulos[0].obtenerVertice(0);
-	PVec3 verticeCeroModif = PVec3(0, 0, 2 * altura);
-	triangulos[0].modificarVertice(verticeCeroModif, 0);
-
-	PVec3 verticeUno = triangulos[1].obtenerVertice(1);
-	PVec3 verticeUnoModif = PVec3(0, 0, 2 * altura);
-	triangulos[1].modificarVertice(verticeUnoModif, 1);
-
-	PVec3 verticeDos = triangulos[2].obtenerVertice(2);
-	PVec3 verticeDosModif = PVec3(0, 0, 2 * altura);
-	triangulos[2].modificarVertice(verticeDosModif, 2);
-}
-
 
 PiramideTri::~PiramideTri()
 {
@@ -71,35 +43,41 @@ void PiramideTri::drawTex()
 	triangulos[2].drawTex();
 }
 
-void transformarParteSuperior(){
-
-}
-
-void transformarParteInferior(){
-
-}
-
-void PiramideTri::drawDiabolo(){
-	glRotatef(-60.0f, 0.0f, 1.0f, 0.0f);
-	glTranslated(0.0f, 0.0f, -180.0f);
+void PiramideTri::drawDiabolo()
+{
+	glPushMatrix();
+	glRotated(-90, 0, 1, 0);
+	glRotated(-90, 1, 0, 0);
+	glTranslated(0.0f, 0.0f, -altura);
 	draw();
-	glRotatef(180.0f, 0.0f, 0.0f, 1.0f);
+	glRotated(30, 0, 0, 1);
 	draw();
-
-	//glRotatef(180.0f, 1.0f, 0.0f, 0.0f);
-	glTranslated(0.0f, 0.0f, -360.0f);
+	glTranslated(0.0f, 0.0f, 2 * altura);
+	glRotated(180, 1, 0, 0);
 	draw();
-	glRotatef(180.0f, 0.0f, 0.0f, 30.0f);
+	glRotated(30, 0, 0, 1);
 	draw();
+	glPopMatrix();
 }
 
 void PiramideTri::drawDiaboloTex(){
+	glPushMatrix();
+	glRotated(-90, 0, 1, 0);
+	glRotated(-90, 1, 0, 0);
+	glTranslated(0.0f, 0.0f, -altura);
 	drawTex();
 	glRotated(30, 0, 0, 1);
 	drawTex();
-	glTranslated(0.0f, 0.0f, 360.0f);
+	glTranslated(0.0f, 0.0f, 2*altura);
 	glRotated(180, 1, 0, 0);
 	drawTex();
 	glRotated(30, 0, 0, 1);
 	drawTex();
+	glPopMatrix();
 }
+
+void PiramideTri::setCoordenadasTextura(CTex2* coordenadas){
+	for (int i = 0; i < 3; i++){
+		triangulos[i].setCoordenadasTextura(coordenadas);
+	}
+};

@@ -8,7 +8,6 @@ class PiramideTri
 public:
 	PiramideTri();
 	PiramideTri(int _radio, int _altura);
-	PiramideTri(TriAnimado tri, int _altura);
 
 	~PiramideTri();
 
@@ -21,5 +20,7 @@ public:
 	void drawDiabolo();
 	void drawDiaboloTex();
 	void drawTex();
+
+	void setCoordenadasTextura(CTex2* coordenadas);
 };
 

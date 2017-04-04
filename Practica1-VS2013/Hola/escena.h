@@ -24,7 +24,7 @@ public:
 
 class Escena {
 public:
-	Escena() : ejes(200), triangulo(50), trianguloAnimado(), piramide(50, 90), rectangulo(100, 50), estado(RECORTAR) {};
+	Escena() : ejes(200), triangulo(50), trianguloAnimado(), piramideAnimada(50, 100), rectangulo(100, 50), estado(RECORTAR) {};
 	~Escena();
 	void init();
 	void draw();
@@ -32,8 +32,9 @@ public:
 	void update(double angulo);
 	void setEstado(EEstado nuevoEstado) { estado = nuevoEstado; };
 	void initTriAnimado(){ trianguloAnimado.set(triangulo); trianguloAnimado.set(0, 0, 100); trianguloAnimado.set(ancho, alto); };
-	void initDiabolo(){};
+	void initDiabolo(){ piramideAnimada.setCoordenadasTextura(trianguloAnimado.getCoordenadasTextura()); };
 	void rotarTriangulo(){ if (estado == RECORTAR) triangulo.rotar(); };
+	void rotarDiabolo(GLdouble ang, GLdouble x, GLdouble y, GLdouble z){ if (estado == DIABOLO) glRotated(ang, x, y, z); };
 	void motion(double x, double y);
 protected:
 	Ejes ejes;
