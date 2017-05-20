@@ -1,21 +1,25 @@
-﻿Build started 20/03/2017 16:55:03.
-     1>Project "C:\Users\Hector\Documents\Master\GC\Practicas\trunk\Practica1-VS2013\Hola\Hola.vcxproj" on node 2 (Rebuild target(s)).
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Hola.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+﻿Compilación iniciada a las 04/04/2017 19:55:52.
+     1>Proyecto "C:\Users\Oscar\Desktop\GC-Practica.git\trunk\Practica1-VS2013\Hola\Hola.vcxproj" en el nodo 2 (Build destinos).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Hola.vcxproj).  This can lead to incorrect clean and rebuild behavior.
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt escena.cpp main.cpp tipos.cpp MallaTriangulo.cpp
-         MallaTriangulo.cpp
-         tipos.cpp
-         main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt escena.cpp
          escena.cpp
-         Generating Code...
+     1>c:\users\oscar\desktop\gc-practica.git\trunk\practica1-vs2013\hola\piramidetri.h(3): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+     1>c:\users\oscar\desktop\gc-practica.git\trunk\practica1-vs2013\hola\piramidetri.h(4): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+     1>c:\users\oscar\desktop\gc-practica.git\trunk\practica1-vs2013\hola\escena.cpp(12): warning C4244: 'argumento' : conversión de 'double' a 'GLubyte'; posible pérdida de datos
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Hector\Documents\Master\GC\Practicas\trunk\Practica1-VS2013\bin\Practica1Debug.exe" /INCREMENTAL /NOLOGO freeglut.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Hector\Documents\Master\GC\Practicas\trunk\Practica1-VS2013\bin\Practica1Debug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Hector\Documents\Master\GC\Practicas\trunk\Practica1-VS2013\bin\Practica1Debug.lib" /MACHINE:X86 Debug\escena.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Oscar\Desktop\GC-Practica.git\trunk\Practica1-VS2013\bin\Practica1Debug.exe" /INCREMENTAL /NOLOGO freeglut.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Oscar\Desktop\GC-Practica.git\trunk\Practica1-VS2013\bin\Practica1Debug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Oscar\Desktop\GC-Practica.git\trunk\Practica1-VS2013\bin\Practica1Debug.lib" /MACHINE:X86 Debug\escena.obj
          Debug\main.obj
+         Debug\PiramideTri.obj
+         Debug\PixMap24RGB.obj
+         Debug\Rectangulo.obj
+         Debug\Textura.obj
          Debug\tipos.obj
          Debug\MallaTriangulo.obj
-         Hola.vcxproj -> C:\Users\Hector\Documents\Master\GC\Practicas\trunk\Practica1-VS2013\bin\Practica1Debug.exe
-     1>Done Building Project "C:\Users\Hector\Documents\Master\GC\Practicas\trunk\Practica1-VS2013\Hola\Hola.vcxproj" (Rebuild target(s)).
+         Debug\TriAnimado.obj
+         Hola.vcxproj -> C:\Users\Oscar\Desktop\GC-Practica.git\trunk\Practica1-VS2013\bin\Practica1Debug.exe
+     1>Compilación del proyecto terminada "C:\Users\Oscar\Desktop\GC-Practica.git\trunk\Practica1-VS2013\Hola\Hola.vcxproj" (Build destinos).
 
-Build succeeded.
+Compilación correcta.
 
-Time Elapsed 00:00:02.43
+Tiempo transcurrido 00:00:00.89
